@@ -4,37 +4,10 @@ services:
   app_proxy:
     environment:
       APP_HOST: pierrenedelec-ng-doc-pro_1
-      APP_PORT: 3000
-      # Set to "false" if your app has its own authentication
+      APP_PORT: 3001
       PROXY_AUTH_ADD: "false"
-
   ng-doc-pro:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: ghcr.io/pierrenedelec/ng-doc-pro:latest@sha256:63b677819ba785f9004b9fe80e23b7839b9e99dddb37eb4c58f976c4dbda381c
-    container_name: ng-doc-pro
-    restart: on-failure
-    # Graceful shutdown timeout
-    stop_grace_period: 1m
-    # Port mapping (host:container)
-    # HTTP: 3000 -> 80, HTTPS: 3443 -> 443
-    ports:
-      - 3000:80
-      - 3443:443
-    environment:
-      - TZ=UTC
-    # Volume for Caddy SSL certificates persistence
-    volumes:
-      - caddy_data:/data/caddy
-      - caddy_config:/config/caddy
-    healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost"]
-      interval: 30s
-      timeout: 3s
-      retries: 3
-      start_period: 5s
+    image: ghcr.io/pierrenedelec/ng-doc-pro@sha256:f8f6f8d1eb5fdfb21ed419ddc3c4ad5bec52aa2132791c78a8d2acf4c5aa9c26
+    user: "1000:1000"
+    init: true
 
-volumes:
-  caddy_data:
-  caddy_config:
