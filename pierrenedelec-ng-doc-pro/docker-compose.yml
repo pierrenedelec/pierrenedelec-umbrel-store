@@ -3,12 +3,16 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: ng-doc-pro_1
+      APP_HOST: pierrenedelec-ng-doc-pro_1
       APP_PORT: 3000
+      # Set to "false" if your app has its own authentication
+      PROXY_AUTH_ADD: "false"
+
   ng-doc-pro:
     image: ghcr.io/pierrenedelec/ng-doc-pro@sha256:f8f6f8d1eb5fdfb21ed419ddc3c4ad5bec52aa2132791c78a8d2acf4c5aa9c26
     restart: on-failure
-    volumes:
-      - ${UMBREL_ROOT}/data/storage/downloads/ng-doc-pro:/downloads
-    environment:
-      - DELETE_FILE_ON_TRASHCAN=true
+    # Graceful shutdown timeout
+    stop_grace_period: 1m
+    # Port mapping (host:container)
+    ports:
+      - 3000:3000
