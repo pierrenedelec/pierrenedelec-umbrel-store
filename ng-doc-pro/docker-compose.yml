@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: ng-doc-pro_1
+      APP_PORT: 3000
+  ng-doc-pro:
+    image: ghcr.io/pierrenedelec/ng-doc-pro@sha256:f8f6f8d1eb5fdfb21ed419ddc3c4ad5bec52aa2132791c78a8d2acf4c5aa9c26
+    restart: on-failure
+    volumes:
+      - ${UMBREL_ROOT}/data/storage/downloads/ng-doc-pro:/downloads
+    environment:
+      - DELETE_FILE_ON_TRASHCAN=true

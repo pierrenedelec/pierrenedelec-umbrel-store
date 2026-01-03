@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: ng-doc-pro
+category: dev
+name: ng-doc-pro
+version: "latest"
+tagline: Angular ng-doc-pro
+description: >-
+  Angular ng-doc-pro 
+developer: Pierre Nédélec
+dependencies: []
+repo: https://github.com/pierrenedelec/ng-doc-pro
+port: 8081
+releaseNotes: >-
+  This release includes important updates and improvements.
+
+  Full release notes can be found at https://github.com/pierrenedelec/ng-doc-pro/releases
+support: https://github.com/pierrenedelec/ng-doc-pro/issues
+website: https://github.com/pierrenedelec/ng-doc-pro
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
