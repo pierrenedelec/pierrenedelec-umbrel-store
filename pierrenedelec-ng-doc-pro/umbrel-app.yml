@@ -9,7 +9,7 @@ description: >-
 developer: Pierre Nédélec
 dependencies: []
 repo: https://github.com/pierrenedelec/ng-doc-pro
-port: 3000
+port: 3001
 releaseNotes: >-
   This release includes important updates and improvements.
 
