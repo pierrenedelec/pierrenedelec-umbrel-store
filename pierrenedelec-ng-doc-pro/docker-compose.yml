@@ -7,7 +7,7 @@ services:
       APP_PORT: 3001
       PROXY_AUTH_ADD: "false"
   ng-doc-pro:
-    image: ghcr.io/pierrenedelec/ng-doc-pro@sha256:f8f6f8d1eb5fdfb21ed419ddc3c4ad5bec52aa2132791c78a8d2acf4c5aa9c26
+    image: ghcr.io/pierrenedelec/ng-doc-pro@sha256:a571e27a4e44c62ead1c7785c006548589d76f8b0e68ceb598cee471b9e8ddd8
     user: "1000:1000"
     init: true
 
