@@ -5,9 +5,9 @@ services:
     environment:
       APP_HOST: pierrenedelec-ng-doc-pro_server_1
       APP_PORT: 3001
-      
+
   server:
-    image: ghcr.io/pierrenedelec/ng-doc-pro@sha256:a571e27a4e44c62ead1c7785c006548589d76f8b0e68ceb598cee471b9e8ddd8
+    image: ghcr.io/pierrenedelec/ng-doc-pro@sha256:4cbd34918f3be7f9ee63911c5884a40ba56356f0f1eae78f9351090c99c822d1
     user: "1000:1000"
     init: true
 
