@@ -1,9 +1,0 @@
-version: "3.7"
-
-services:
-  app:
-    image: ghcr.io/pierrenedelec/ng-doc-pro:latest@sha256:4cbd34918f3be7f9ee63911c5884a40ba56356f0f1eae78f9351090c99c822d1
-    user: "1001:1001"
-    init: true
-    ports:
-      - "3001:3001"
