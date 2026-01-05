@@ -20,7 +20,7 @@ developer: Jez500
 dependencies: []
 repo: https://github.com/jez500/pricebuddy
 support: https://github.com/jez500/pricebuddy/issues
-port: 80
+port: 3007
 gallery:
   - 1.jpg
   - 2.jpg
