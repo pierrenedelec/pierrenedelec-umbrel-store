@@ -1,0 +1,37 @@
+manifestVersion: 1
+id: pierrenedelec-pricebuddy
+category: automation
+name: PriceBuddy
+version: "1.0.0"
+tagline: Track and monitor product prices
+description: >-
+  PriceBuddy is a self-hosted price tracking and monitoring solution. 
+  Track prices from various online stores, get alerts when prices drop, 
+  and make informed purchasing decisions.
+  
+  Features:
+  - Track products from multiple online stores
+  - Price history and charts
+  - Price drop alerts
+  - Web scraping with SeleniumBase
+  - User-friendly dashboard
+  
+developer: Jez500
+dependencies: []
+repo: https://github.com/jez500/pricebuddy
+support: https://github.com/jez500/pricebuddy/issues
+port: 80
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: "admin@example.com"
+defaultPassword: "admin"
+releaseNotes: >-
+  Initial release of PriceBuddy for Umbrel.
+  
+  Full release notes can be found at https://github.com/jez500/pricebuddy/releases
+submitter: Pierre Nédélec
+submission: https://github.com/pierrenedelec/umbrel-store
+

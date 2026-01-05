@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: pierrenedelec-pricebuddy_app_1
+      APP_PORT: 80
+
+  app:
+    image: jez500/pricebuddy:latest
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data/storage:/app/storage
+    environment:
+      DB_HOST: pierrenedelec-pricebuddy_database_1
+      DB_USERNAME: pricebuddy
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: pricebuddy
+      APP_USER_EMAIL: ${APP_USER_EMAIL}
+      APP_USER_PASSWORD: ${APP_USER_PASSWORD}
+      SCRAPER_BASE_URL: http://pierrenedelec-pricebuddy_scraper_1:3000
+      AFFILIATE_ENABLED: "true"
+    depends_on:
+      - database
+      - scraper
+
+  database:
+    image: mysql:8.2
+    restart: on-failure
+    environment:
+      MYSQL_DATABASE: pricebuddy
+      MYSQL_USER: pricebuddy
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - ${APP_DATA_DIR}/data/mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 1m
+
+  scraper:
+    image: jez500/seleniumbase-scrapper:latest
+    restart: on-failure
+
