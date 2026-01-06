@@ -35,6 +35,9 @@ submitter: Pierre Nédélec
 submission: https://github.com/getumbrel/umbrel-apps/pull/
 repo: https://github.com/Lissy93/web-check
 support: https://github.com/Lissy93/web-check/issues
+gallery:
+  - https://raw.githubusercontent.com/pierrenedelec/pierrenedelec-umbrel-app-gallery/pierrenedelec-web-check/1.png
+  - https://raw.githubusercontent.com/pierrenedelec/umbrel-store/main/pierrenedelec-webcheck/2.png
 releaseNotes: >-
   This is the stable version of WebCheck, developed as a React application. The backend consists of a series of lambda functions and can be deployed to Vercel, Netlify, or any Docker-compatible service. For self-hosting, the Docker container includes a Node server to expose all endpoints locally and to serve the frontend.
   

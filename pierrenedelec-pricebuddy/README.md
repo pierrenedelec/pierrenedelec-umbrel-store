@@ -12,16 +12,21 @@ Price tracking and monitoring solution for Umbrel.
 
 ## Configuration
 
-### Required Environment Variables
+### Environment Variables
 
-When installing this app on Umbrel, you'll need to configure the following environment variables:
+This app comes with sensible defaults but should be configured for production use:
 
-- `DB_PASSWORD`: Database password for the MySQL user (required)
-- `DB_ROOT_PASSWORD`: Root password for MySQL (required)
-- `APP_USER_EMAIL`: Initial admin email (default: admin@example.com)
-- `APP_USER_PASSWORD`: Initial admin password (default: admin)
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `DB_PASSWORD` | `changeme123` | Database password for MySQL user |
+| `DB_ROOT_PASSWORD` | `rootchangeme123` | Root password for MySQL |
+| `APP_USER_EMAIL` | `admin@example.com` | Initial admin email |
+| `APP_USER_PASSWORD` | `admin` | Initial admin password |
 
-**Security Note**: Make sure to change the default admin credentials after first login!
+**⚠️ Security Note**: 
+- Change these default passwords before deploying to production!
+- Change the admin credentials after first login!
+- The app will work out of the box with defaults for testing
 
 ## Architecture
 
@@ -35,7 +40,8 @@ This app consists of 3 services:
 
 The following directories are persisted:
 
-- `${APP_DATA_DIR}/data/storage`: Application storage
+- `${APP_DATA_DIR}/data/storage`: Application storage (uploaded files, cache)
+- `${APP_DATA_DIR}/data/bootstrap/cache`: Laravel framework cache
 - `${APP_DATA_DIR}/data/mysql`: MySQL database
 
 ## Original Project

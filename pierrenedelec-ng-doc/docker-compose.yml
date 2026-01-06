@@ -7,6 +7,6 @@ services:
       APP_PORT: 80
 
   server:
-    image: ghcr.io/pierrenedelec/ng-doc-pro:latest@sha256:4cbd34918f3be7f9ee63911c5884a40ba56356f0f1eae78f9351090c99c822d1
+    image: ghcr.io/pierrenedelec/ng-doc-pro:latest@sha256:sha256:10f43fd465c15357dbf289f66ee86940cc9b0e72199b075ebe2df3048aa43077
     restart: on-failure
     init: true
