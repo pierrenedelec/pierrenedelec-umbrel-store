@@ -1,5 +1,6 @@
 manifestVersion: 1
 id: pierrenedelec-webcheck
+icon: https://raw.githubusercontent.com/pierrenedelec/pierrenedelec-umbrel-app-gallery/refs/heads/main/pierrenedelec-webcheck/logo.png
 name: WebCheck
 tagline: An all-in-one Open Source Intelligence tool for analyzing any website
 category: networking
